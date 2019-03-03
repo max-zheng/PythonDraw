@@ -22,13 +22,12 @@ def main(player):
         from PIL import ImageGrab
         x=root.winfo_rootx()+widget.winfo_x()
         y=root.winfo_rooty()+widget.winfo_y()
-        x1=x+widget.winfo_width()
-        y1=y+widget.winfo_height()
+        x1=x+widget.winfo_width() * 2
+        y1=y+widget.winfo_height() * 2
 
         im = ImageGrab.grab(bbox=(x,y,x1,y1))
         im.save("player{}.png".format(player))
 
-        #ImageGrab.grab().crop((x,y,x1,y1)).save("player{}.png".format(player))
         root.destroy()
 
     root.mainloop()
